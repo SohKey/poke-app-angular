@@ -1,0 +1,20 @@
+<article class="panel is-link">
+  <p class="panel-heading">
+    Liste de pokemons
+  </p>
+  <div class="panel-block has-background-light">
+    <p class="control has-icons-left is-vcentered">
+      <input class="input is-success" style="width: 95%;" #searchBox (keyup)="search(searchBox.value)"
+        placeholder="Rechercher un pokémon" />
+      <span class="icon is-left" style="height: 3em;">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </span>
+    </p>
+  </div>
+    <a *ngFor="let pokemon of pokemons$" (click)="gotoDetail(pokemon)" class="panel-block has-background-light">
+      <span class="panel-icon">
+        <i class="fas fa-book" aria-hidden="true"></i>
+      </span>
+      {{ pokemon.name }}
+    </a>
+</article>

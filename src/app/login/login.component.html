@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column is-one-third">
+            <form *ngIf="!auth.isLoggedIn" #loginForm="ngForm" class="box">
+                <div class="block">
+                    <span class="title">Log in</span>
+                    <p><em>{{message}}</em></p>
+                </div>
+                <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control">
+                        <input class="input" type="text" id="name" [(ngModel)]="name" name="name" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control">
+                        <input class="input" type="password" id="password" [(ngModel)]="password" name="password"
+                            required>
+                    </div>
+                </div>
+
+                <div class="card-action center">
+                    <a (click)="login()" [ngClass]="isLoading ? 'button is-primary is-loading' : 'button is-primary'" *ngIf="!auth.isLoggedIn">Se connecter</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

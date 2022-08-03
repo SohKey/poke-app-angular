@@ -1,0 +1,46 @@
+<div *ngIf="pokemon" class="container"
+  style="height: 80vh; display: flex; justify-content: center; align-items: center;">
+  <div class="box has-background-light">
+    <div class="columns">
+      <div class="card-image has-background-white" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;">
+        <img [src]="pokemon.picture">
+      </div>
+      <table class="table block">
+        <tbody>
+          <tr>
+            <td>Nom</td>
+            <td><strong>{{ pokemon.name }}</strong></td>
+          </tr>
+          <tr>
+            <td>Points de vie</td>
+            <td><strong>{{ pokemon.hp }}</strong></td>
+          </tr>
+          <tr>
+            <td>Dégâts</td>
+            <td><strong>{{ pokemon.cp }}</strong></td>
+          </tr>
+          <tr>
+            <td>Types</td>
+            <td>
+              <span *ngFor="let type of pokemon.types" class="{{ type | pokemonTypeColor }}">{{ type }}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Date de création</td>
+            <td><em>{{ pokemon.created | date:"dd/MM/yyyy" }}</em></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="buttons block">
+      <a (click)="goBack()" class="button is-info is-outlined">Retour</a>
+      <a (click)="goToEdit(pokemon)" class="button is-primary	">Editer</a>
+      <a (click)="deletePokemon(pokemon)" class="button is-danger">Supprimer</a>
+    </div>
+  </div>
+  <div class="block">
+    <h4 *ngIf='!pokemon' class="center">
+      <app-loader></app-loader>
+    </h4>
+  </div>
+</div>

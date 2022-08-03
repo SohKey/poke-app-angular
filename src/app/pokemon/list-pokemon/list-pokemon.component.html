@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="block">
+        <app-search-pokemon></app-search-pokemon>
+    </div>
+    <div *ngIf="!pokemonsList" class="is-centered">
+        <app-loader></app-loader>
+    </div>
+    
+    <div class="columns" style="flex-wrap: wrap;">
+        <div class="column is-one-third" *ngFor="let pokemon of pokemonsList">
+            <div class="card" pkmnBorderCard (click)="goToPokemon(pokemon)">
+                <div class="columns is-centered is-vcentered" style="min-height: -webkit-fill-available;">
+                    <figure class="image is-128x128">
+                        <img class="is-square" [src]="pokemon.picture">
+                    </figure>
+                    <div class="card-content">
+                        <p>{{ pokemon.name }}</p>
+                        <p><small>{{ pokemon.created | date:'dd/MM/yy' }}</small></p>
+                        <span *ngFor="let type of pokemon.types" class="{{ type | pokemonTypeColor }}">
+                            {{ type }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
