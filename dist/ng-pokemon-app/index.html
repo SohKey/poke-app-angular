@@ -10,9 +10,30 @@
 <link rel="stylesheet" href="styles.ef46db3751d8e999.css"></head>
 <body style="background: url(./assets/background.jpg); background-attachment: fixed; min-height: 100vh;">
   <app-root></app-root>
-<script src="runtime.b721dbfd3a1c2a31.js" type="module"></script><script src="polyfills.30202b8a4efd5819.js" type="module"></script><script src="main.aa6ec4c0d39bd7c6.js" type="module"></script>
+<script src="runtime.b721dbfd3a1c2a31.js" type="module"></script><script src="polyfills.30202b8a4efd5819.js" type="module"></script><script src="main.984f436e091bcbf6.js" type="module"></script>
 
 
 <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
 
+// Get all "navbar-burger" elements
+const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+// Add a click event on each of them
+$navbarBurgers.forEach( el => {
+  el.addEventListener('click', () => {
+
+    // Get the target from the "data-target" attribute
+    const target = el.dataset.target;
+    const $target = document.getElementById(target);
+
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    el.classList.toggle('is-active');
+    document.querySelector('.navbar-menu').classList.toggle('is-active')
+  });
+});
+
+});
+</script>
 </body></html>

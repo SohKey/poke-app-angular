@@ -9,7 +9,7 @@
     <div class="columns" style="flex-wrap: wrap;">
         <div class="column is-one-third" *ngFor="let pokemon of pokemonsList">
             <div class="card" pkmnBorderCard (click)="goToPokemon(pokemon)">
-                <div class="columns is-centered is-vcentered" style="min-height: -webkit-fill-available;">
+                <div class="edit columns is-centered is-vcentered" style="min-height: -webkit-fill-available;display: flex;">
                     <figure class="image is-128x128">
                         <img class="is-square" [src]="pokemon.picture">
                     </figure>
@@ -24,6 +24,4 @@
             </div>
         </div>
     </div>
-
-
 </div>
