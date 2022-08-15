@@ -17,9 +17,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 https://sohkey.eu || https://poke-app-angular.web.app/
 
-<p> The api is hosted on `Heroku`, code <a href="https://github.com/SohKey/poke-api">here</a> </p>
+The api is hosted on `Heroku`. Code <a href="https://github.com/SohKey/poke-api">here</a>
 
-<p> The app is hosted on `Firebase` </p>
+The app is hosted on `Firebase`
 
 ## Development server
 
