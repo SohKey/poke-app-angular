@@ -1,6 +1,25 @@
-# NgPokemonApp
+<h1 align=center>NgPokemonApp</h1>
 
+<p align=center>
+  <img src="https://img.shields.io/badge/Made%20By-%20Sohkey-blueviolet?style=for-the-badge" alt="powered by sohkey"/>
+  <img src="https://img.shields.io/badge/Made%20with-Javascript-%23f7df1e?style=for-the-badge" alt="fully in javascript"/>
+  <img src="https://img.shields.io/badge/Built%20With-%E2%99%A5-pink?style=for-the-badge" alt="built with muscles"/>
+  <img src="https://img.shields.io/badge/Powered%20By-Angular-%23ff3b00?style=for-the-badge" alt="fully in angular"/>
+</p>
+
+<p align=center>
+  <img src="https://media.discordapp.net/attachments/587339736629379105/1008843129216057344/unknown.png?width=1440&height=497" />
+</p>
+  
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+
+## App & Hosting
+
+https://sohkey.eu || https://poke-app-angular.web.app/
+
+Api hosted on `Heroku` code <a href="https://github.com/SohKey/poke-api">here</a>,
+
+App hosted on `Firebase`.
 
 ## Development server
 
