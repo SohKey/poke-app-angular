@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -28,4 +28,6 @@ export class AppComponent {
     const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}')
     return currentUser.name
   }
+
+
 }

@@ -1,75 +1,92 @@
+<!--
+<video muted autoplay loop>
+  <source src="../assets/videoback.mp4" type="video/mp4">
+</video>
+-->
+<img class="background" src="../assets/background.jpg" alt="">
+<style>
+  video,.background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+</style>
+
+
 <nav class="navbar has-background-light block" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="#">
-      <img src="../assets/logo.png">
-    </a>
-
-    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" id="burger">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-    <div id="burger-content" style="display: none;">
-      <a class="navbar-item is-hovered" routerLink="/pokemons">
-        Home
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <img src="../assets/logo.png">
       </a>
+
+      <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" id="burger">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+      <div id="burger-content" style="display: none;">
+        <a class="navbar-item is-hovered" routerLink="/pokemons">
+          Home
+        </a>
+      </div>
     </div>
-  </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item is-hovered" routerLink="/pokemons">
-        Home
-      </a>
-
-      <a class="navbar-item " href="https://github.com/SohKey/poke-app-angular">
-        Documentation
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link ">
-          More
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item is-hovered" routerLink="/pokemons">
+          Home
         </a>
 
-        <div class="navbar-dropdown">
-          <a class="navbar-item" routerLink="/pokemon/add">
-            <i class="fas fa-unlock mr-2"></i>
-            <p>Add Pokemon</p>
+        <a class="navbar-item " href="https://github.com/SohKey/poke-app-angular">
+          Documentation
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link ">
+            More
           </a>
-          <a class="navbar-item">
-            <i class="fas fa-lock"></i>
-          </a>
-          <a class="navbar-item">
-            <i class="fas fa-lock"></i>
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            <i class="fas fa-lock"></i>
-          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" routerLink="/pokemon/add">
+              <i class="fas fa-unlock mr-2"></i>
+              <p>Add Pokemon</p>
+            </a>
+            <a class="navbar-item">
+              <i class="fas fa-lock"></i>
+            </a>
+            <a class="navbar-item">
+              <i class="fas fa-lock"></i>
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              <i class="fas fa-lock"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div *ngIf="!auth.isLoggedIn" class="buttons">
+            <a class="button is-info" disabled>
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-info is-outlined" routerLink="/login">
+              <strong>Log in</strong>
+            </a>
+          </div>
+          <div *ngIf="auth.isLoggedIn" class="buttons">
+            <strong class="button is-success" disabled>Account: {{ getname() }}</strong>
+            <a (click)="logout()" *ngIf="auth.isLoggedIn" class="button is-danger">
+              Log out
+            </a>
+          </div>
         </div>
       </div>
     </div>
+  </nav>
 
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div *ngIf="!auth.isLoggedIn" class="buttons">
-          <a class="button is-info" disabled>
-            <!-- Sign up / Register (not allowed)-->
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-info is-outlined" routerLink="/login">
-            <strong>Log in</strong>
-          </a>
-        </div>
-        <div *ngIf="auth.isLoggedIn" class="buttons">
-          <strong class="button is-success" disabled>Account: {{ getname() }}</strong>
-          <a (click)="logout()" *ngIf="auth.isLoggedIn" class="button is-danger">
-            Log out
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
+  <router-outlet></router-outlet>
 
-<router-outlet></router-outlet>

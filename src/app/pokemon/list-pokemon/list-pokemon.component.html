@@ -1,16 +1,14 @@
 <div class="container">
     <div class="block">
         <app-search-pokemon></app-search-pokemon>
-    </div>
-    <div *ngIf="!pokemonsList" class="is-centered">
-        <app-loader></app-loader>
+        <app-loader *ngIf="!pokemonsList" class="columns is-centered is-vcentered mt-2"></app-loader>
     </div>
     
     <div class="columns" style="flex-wrap: wrap;">
         <div class="column is-one-third" *ngFor="let pokemon of pokemonsList">
             <div class="card" pkmnBorderCard (click)="goToPokemon(pokemon)">
                 <div class="edit columns is-centered is-vcentered" style="min-height: -webkit-fill-available;display: flex;">
-                    <figure class="image is-128x128">
+                    <figure class="image is-128x128 m-0">
                         <img class="is-square" [src]="pokemon.picture">
                     </figure>
                     <div class="card-content">

@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { delay, Observable, of, tap, catchError } from 'rxjs';
+import { of, tap, catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +27,8 @@ export class AuthService {
     }
 
     return this.http.post(`${this.apiLink}/api/login`, user, httpOptions).pipe(
-      tap((response) => 
-        {if(response) {
+      tap((response) => {
+        if(response) {
           this.isLoggedIn = true;
         }this.log(response)
       }

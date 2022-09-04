@@ -2,13 +2,13 @@
   <p class="panel-heading">
     Liste de pokemons
   </p>
-  <div class="panel-block has-background-light">
+  <div class="panel-block has-background-light pr-6">
     <p class="control has-icons-left is-vcentered">
-      <input class="input is-success" style="width: 95%;" #searchBox (keyup)="search(searchBox.value)"
-        placeholder="Rechercher un pokémon" />
       <span class="icon is-left" style="height: 3em;">
         <i class="fas fa-search" aria-hidden="true"></i>
       </span>
+      <input class="input is-success" #searchBox (keyup)="search(searchBox.value)"
+        placeholder="Rechercher un pokémon" />
     </p>
   </div>
     <a *ngFor="let pokemon of pokemons$" (click)="gotoDetail(pokemon)" class="panel-block has-background-light">
