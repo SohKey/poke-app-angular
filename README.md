@@ -19,7 +19,7 @@ https://sohkey.eu || https://poke-app-angular.web.app/
 
 Api hosted on `vps` code <a href="https://github.com/SohKey/poke-api">here</a>,
 
-<div align=center>
+<div>
 
 App hosted with 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/990e35d0-4443-4bfc-82a1-7735ff995882/deploy-status)](https://app.netlify.com/sites/sohkey-poke-app/deploys)
