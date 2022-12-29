@@ -10,7 +10,7 @@ export class AuthService {
 
   isLoggedIn: boolean = false;
   redirectUrl: string; 
-  apiLink: string = 'https://sohkey-poke-api.herokuapp.com'
+  apiLink: string = 'http://api.sohkey.eu/'
 
   constructor(private http: HttpClient) {}
 
