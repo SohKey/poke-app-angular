@@ -3,6 +3,7 @@ import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,7 +18,6 @@ export class AppComponent {
   
   ngOnInit() {
     this.auth = this.authService
-    this.authGuard.checklogin()
   }
 
   logout () {
@@ -27,6 +27,15 @@ export class AppComponent {
   getname() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}')
     return currentUser.name
+  }
+
+  isConnected() {
+    return this.authGuard.checklogin()
+  }
+
+  handleLock() {
+    if(this.isConnected()) return "fas fa-unlock mr-2"
+    else return "fas fa-lock mr-2"
   }
 
 
