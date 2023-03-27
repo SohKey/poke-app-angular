@@ -15,7 +15,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## App & Hosting
 
-https://sohkey.eu || https://poke-app-angular.web.app/
+https://pokemon.sohkey.eu || https://poke-app-angular.web.app/
 
 Api hosted on `vps` code <a href="https://github.com/SohKey/poke-api">here</a>,
 
